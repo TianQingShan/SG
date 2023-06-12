@@ -1,0 +1,41 @@
+/**
+ * 此文件用来注册自定义字体, 供不同页面使用注册的字体
+ * 注: 字体文件需要有 .eot/.woff2/.woff/.ttf/.svg 格式, 否则会加载失败
+ */
+
+// -------------------------------------------------
+
+/**
+ * 存储源字体的基础路径
+ * 注: 请确保需要定义的字体都放入这个文件夹中
+ */
+@FONT_SOURCE_PATH_BASEURL: '/fonts';
+
+/**
+ * 定义常规字体的函数
+ * @defineFontName: 注册自定义字体的font-family
+ * @fontDirName: 放置源字体的目录名称
+ * @fontSourceName: 源字体的名称
+ */
+.register(@defineFontName, @fontDirName, @fontSourceName) {
+  @font-face {
+    font-family: @defineFontName;
+    src: url('@{FONT_SOURCE_PATH_BASEURL}/@{fontDirName}/@{fontSourceName}.eot');
+    src:
+      url('@{FONT_SOURCE_PATH_BASEURL}/@{fontDirName}/@{fontSourceName}.eot?#iefix') format('embedded-opentype'),
+      url('@{FONT_SOURCE_PATH_BASEURL}/@{fontDirName}/@{fontSourceName}.woff2') format('woff2'),
+      url('@{FONT_SOURCE_PATH_BASEURL}/@{fontDirName}/@{fontSourceName}.woff') format('woff'),
+      url('@{FONT_SOURCE_PATH_BASEURL}/@{fontDirName}/@{fontSourceName}.ttf') format('truetype'),
+      url('@{FONT_SOURCE_PATH_BASEURL}/@{fontDirName}/@{fontSourceName}.svg#Chalkboard-Normal') format('svg');
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+.register('Impact', 'impact', 'Impact');
+
+/** 定义可变字体 */
+@font-face {
+	font-family: 'Lexend';
+	src: url('/fonts/lexend/Lexend-VariableFont_wght.ttf') format('truetype-variations');
+}

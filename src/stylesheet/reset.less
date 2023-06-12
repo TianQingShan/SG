@@ -1,0 +1,52 @@
+/**
+ **********************************************
+ * 重置浏览器默认样式
+ **********************************************
+ */
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+
+  &[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+
+    -moz-appearance: textfield;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+body {
+  font-family: 'Lexend';
+}
+
+// ::-webkit-scrollbar {
+//   width: 3px;
+//   height: 3px;
+//   background-color: #fff;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: var(--theme-color);
+//   border-radius: 999px;
+// }
